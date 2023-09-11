@@ -460,6 +460,10 @@ ingester:
     storageClass: null
     # -- Annotations for ingester PVCs
     annotations: {}
+    # -- Enable StatefulSetAutoDeletePVC feature
+    enableStatefulSetAutoDeletePVC: true
+    whenDeleted: Retain
+    whenScaled: Deleted
   # -- Adds the appProtocol field to the ingester service. This allows ingester to work with istio protocol selection.
   appProtocol:
     # -- Set the optional grpc service protocol. Ex: "grpc", "http2" or "https"
